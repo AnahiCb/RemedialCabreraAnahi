@@ -27,7 +27,7 @@ public class CategoriaDAO {
 		return cat;
 	}
 	
-	public List<Categoria> getClientes(){
+	public List<Categoria> getCategorias(){
 		String jpql = "Select c from Categoria c";
 		Query q = em.createQuery(jpql,Categoria.class);
 		return q.getResultList();

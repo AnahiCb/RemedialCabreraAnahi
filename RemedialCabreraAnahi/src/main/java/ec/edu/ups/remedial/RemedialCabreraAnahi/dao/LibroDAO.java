@@ -28,7 +28,7 @@ public class LibroDAO {
 		return lib;
 	}
 	
-	public List<Libro> getClientes(){
+	public List<Libro> getLibros(){
 		String jpql = "Select c from Libro c";
 		Query q = em.createQuery(jpql,Libro.class);
 		return q.getResultList();
