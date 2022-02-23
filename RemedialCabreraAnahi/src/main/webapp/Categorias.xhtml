@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<h:head></h:head>
+<body>
+	<h1>Categorias</h1>
+	<h:form>
+		
+		<h:outputLabel value="Cedula" />
+		<h:inputText value="#{categoriaBean.newCategoria.id}" />
+		<br/>
+		<h:outputLabel value="Nombre" />
+		<h:inputText value="#{categoriaBean.newCategoria.nombre}" />
+		<br/>
+		
+		<h:commandButton action="#{categoriaBean.guardar()}" value="Guardar" />
+		<br/>
+		
+		
+			<h:dataTable id="tblCategorias" style="border:2" value="#{categoriaBean.categoriasGuardados}" var="cat">
+				<h:column>
+					<f:facet name="header">Codigo</f:facet>
+					#{cat.id}
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Nombre</f:facet>
+					#{cat.nombre}
+				</h:column>
+				
+			</h:dataTable>
+		
+	</h:form>
+
+</body>
+</html>

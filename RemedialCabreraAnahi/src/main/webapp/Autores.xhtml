@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<h:head></h:head>
+<body>
+	<h1>Autores</h1>
+	<h:form>
+		
+		<h:outputLabel value="Cedula" />
+		<h:inputText value="#{autoresBean.newAutor.cedula}" />
+		<br/>
+		<h:outputLabel value="Nombre" />
+		<h:inputText value="#{autoresBean.newAutor.nombre}" />
+		<br/>
+		<h:outputLabel value="Direccion" />
+		<h:inputText value="#{autoresBean.newAutor.direccion}" />
+		<br/>
+		<h:commandButton action="#{autoresBean.guardar()}" value="Guardar" />
+		<br/>
+		
+		
+			<h:dataTable id="tblAutores" style="border:2" value="#{autoresBean.autoresGuardados}" var="au">
+				<h:column>
+					<f:facet name="header">Cedula</f:facet>
+					#{au.cedula}
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Nombre</f:facet>
+					#{au.nombre}
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Direccion</f:facet>
+					#{au.direccion}
+				</h:column>
+			</h:dataTable>
+		
+	</h:form>
+
+</body>
+</html>

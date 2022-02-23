@@ -22,11 +22,11 @@ public class GestionAutoresON {
 		}
 	}
 	
-	public List<Autor> getClientes(){
+	public List<Autor> getAutores(){
 		return daoAutor.getAutores();
 	}
 	
-	public Autor getClienteCed(String cedula) {
+	public Autor getAutorCed(String cedula) {
 		return daoAutor.read(cedula);
 	}
 
